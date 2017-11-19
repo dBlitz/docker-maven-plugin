@@ -1,9 +1,8 @@
 node {
 
     checkout scm
-    tools { 
-        maven 'M3'
-    }
+    mvnHome = tool 'M3'
+
 
     env.DOCKER_API_VERSION="1.23"
     
@@ -17,7 +16,7 @@ node {
 
     stage "Build"
     
-        sh "mvn install dockerfile:build"
+        sh "'${mvnHome}/bin/mvn' install dockerfile:build"
 
     stage "Deploy"
 
