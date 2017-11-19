@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: patient-service
+  labels:
+    app: patient-service
+spec:
+  ports:
+    - port: 3333
+      targetPort: 3333
+  selector:
+    app: patient-service
+    tier: patient-service
+  type: NodePort
+
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: patient-service
+  labels:
+    app: patient-service
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: patient-service
+        tier: patient-service
+    spec:
+      containers:
+      - image: 127.0.0.1:30400/patient-service:latest
+        name: patient-service
+        ports:
+        - containerPort: 3333
+          name: patient-service
