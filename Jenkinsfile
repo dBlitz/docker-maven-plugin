@@ -20,7 +20,6 @@ node {
 
     stage "Deploy"
 
-        sh " kubectl create -f k8s/deployment.yaml"
-        sh "kubectl rollout status deployment/patient-service"
+        sh "ls"
 
 }
