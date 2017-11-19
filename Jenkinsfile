@@ -1,6 +1,9 @@
 node {
 
     checkout scm
+    tools { 
+        maven 'M3'
+    }
 
     env.DOCKER_API_VERSION="1.23"
     
