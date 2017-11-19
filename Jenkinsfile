@@ -16,7 +16,7 @@ node {
 
     stage "Build"
     
-        sh "'${mvnHome}/bin/mvn' install dockerfile:build"
+        sh "'${mvnHome}/bin/mvn' clean install dockerfile:build"
 
     stage "Deploy"
 
