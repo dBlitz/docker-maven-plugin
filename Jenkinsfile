@@ -20,7 +20,7 @@ node {
 
     stage "Deploy"
 
-        sh ""sed 's#127.0.0.1:30400/patient-service:latest#'$BUILDIMG'#' k8s/deployment.yaml | kubectl apply -f -"
+        sh "sed 's#127.0.0.1:30400/patient-service:latest#'$BUILDIMG'#' k8s/deployment.yaml | kubectl apply -f -"
         sh "kubectl rollout status deployment/patient-service"
 
 }
