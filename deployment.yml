@@ -30,7 +30,7 @@ spec:
         tier: patient-service
     spec:
       containers:
-      - image: 127.0.0.1:30400/patient-service:latest
+      - image: springio/gs-spring-boot-docker:latest
         name: patient-service
         ports:
         - containerPort: 3333
