@@ -20,7 +20,7 @@ node {
 
     stage "Deploy"
 
-        sh " kubectl create -f deployment.yaml"
+        sh " kubectl create -f deployment.yml"
         sh "kubectl rollout status deployment/patient-service"
 
 }
