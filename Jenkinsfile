@@ -16,7 +16,8 @@ node {
 
     stage "Build"
     
-        sh "'${mvnHome}/bin/mvn' clean install dockerfile:build"
+        sh "'${mvnHome}/bin/mvn' clean install"
+        sh "docker build -t springio/gs-spring-boot-docker ."
 
     stage "Deploy"
 

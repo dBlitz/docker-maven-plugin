@@ -30,8 +30,10 @@ spec:
         tier: patient-service
     spec:
       containers:
-      - image: springio/gs-spring-boot-docker:latest
+      - image: springio/gs-spring-boot-docker
         name: patient-service
+        imagePullPolicy: Never
+
         ports:
         - containerPort: 3333
           name: patient-service
